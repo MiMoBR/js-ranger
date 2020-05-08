@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		body{
+			background-color: #05668d;
+		    color: #ebf2fa;
+		}
+		.container{
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    min-height: 100vh;
+		}
+		.slideBox{
+			width: 60%;
+    		position: relative;
+		}
+		h3{
+		    position: absolute;
+		    left: 42%;
+		    top: 40px;
+		    text-shadow: 0px 1px 10px black;
+		}
+		.slider:after{
+		    content: "100%";
+		    font-size: 1.5rem;
+		    position: absolute;
+		    left: 100%;
+		    bottom: 1%;
+		}
+		.slider:before{
+		    content: "0%";
+		    font-size: 1.5rem;
+		    position: absolute;
+		    left: -5%;
+		    bottom: 0%;
+		}
+		.slider{
+			-webkit-appearance: none;
+		    width: 100%;
+		    height: 20px;
+		    background: #a5be00;
+		    outline: none;
+		    border-radius: 12px;
+		    opacity: 0.7;
+		    box-shadow: 0px 1px 10px 1px black;
+		}
+		.slider:hover{
+			opacity: 1;
+		}
+		.slider::-webkit-slider-thumb{
+			-webkit-appearance: none;
+		    appearance: none;
+		    background: #ebf2fa;
+		    outline: none;
+		    border-radius: 50%;
+		    cursor: pointer;
+		    width: 40px;
+		    height: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="sliderBox">
+			<input type="range" min="0" max="100" value="0" id="range" class="slider">
+			<h3>Slider value: <span id="value"></span> %</h3>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var range = document.getElementById("range");
+		var num = document.getElementById("value");
+
+		num.innerHTML = range.value;
+
+		range.oninput = function(){
+		    value.innerHTML = this.value;
+		}
+	</script>
+</body>
+</html>
